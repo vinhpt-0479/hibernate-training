@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: hibernate-training-db
+    restart: always
+    environment:
+      - POSTGRES_USER=ptvinh203
+      - POSTGRES_PASSWORD=ptvinh203
+      - POSTGRES_DB=hibernate_training
+    ports:
+      - "7373:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:
+    driver: local
