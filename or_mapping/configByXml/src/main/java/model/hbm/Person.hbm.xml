@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="model.entity">
+	<class name="Person" table="Person">
+        <id name="id" column="person_id">
+            <generator class="native"/>
+        </id>
+        <property name="name" column="name"/>
+        <one-to-one name="passport" class="Passport" cascade="all"/>
+    </class>
+</hibernate-mapping>
